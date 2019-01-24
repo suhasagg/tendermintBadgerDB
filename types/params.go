@@ -30,9 +30,9 @@ type HashedParams struct {
 	BlockMaxGas   int64
 }
 
-// BlockSizeParams define limits on the block size and gas plus minimum time
+// BlockParams define limits on the block size and gas plus minimum time
 // between blocks.
-type BlockSizeParams struct {
+type BlockParams struct {
 	MaxBytes int64 `json:"max_bytes"`
 	MaxGas   int64 `json:"max_gas"`
 	// Minimum time increment between consecutive blocks (in milliseconds)
@@ -140,8 +140,8 @@ func (params *ConsensusParams) Validate() error {
 func (params *ConsensusParams) Hash() []byte {
 	hasher := tmhash.New()
 	bz := cdcEncode(HashedParams{
-		params.BlockSize.MaxBytes,
-		params.BlockSize.MaxGas,
+		params.Block.MaxBytes,
+		params.Block.MaxGas,
 	})
 	if bz == nil {
 		panic("cannot fail to encode ConsensusParams")

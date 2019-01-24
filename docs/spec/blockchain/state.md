@@ -95,12 +95,12 @@ type hashedParams struct {
 
 func (params ConsensusParams) Hash() []byte {
     SHA256(hashedParams{
-        BlockMaxBytes: params.BlockSize.MaxBytes,
-        BlockMaxGas: params.BlockSize.MaxGas,
+        BlockMaxBytes: params.Block.MaxBytes,
+        BlockMaxGas: params.Block.MaxGas,
     })
 }
 
-type BlockSize struct {
+type BlockParams struct {
 	MaxBytes        int64
 	MaxGas          int64
   TimeIotaMs      int64
