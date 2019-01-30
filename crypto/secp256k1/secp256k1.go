@@ -10,6 +10,7 @@ import (
 	"golang.org/x/crypto/ripemd160"
 
 	secp256k1 "github.com/btcsuite/btcd/btcec"
+	ethcrypto "github.com/ethereum/go-ethereum/crypto"
 
 	amino "github.com/tendermint/go-amino"
 
@@ -138,4 +139,23 @@ func (pubKey PubKeySecp256k1) Equals(other crypto.PubKey) bool {
 		return bytes.Equal(pubKey[:], otherSecp[:])
 	}
 	return false
+}
+
+// Sign creates an ECDSA signature on curve Secp256k1, using SHA256 on the msg.
+func (privKey PrivKeySecp256k1) Sign(msg []byte) ([]byte, error) {
+	priv, err := ethcrypto.ToECDSA(privKey[:])
+	if err != nil {
+		return nil, err
+	}
+	rsv, err := ethcrypto.Sign(crypto.Sha256(msg), priv)
+	if err != nil {
+		return nil, err
+	}
+	// we do not need v  in r||s||v:
+	rs := rsv[:len(rsv)-1]
+	return rs, nil
+}
+
+func (pubKey PubKeySecp256k1) VerifyBytes(msg []byte, sig []byte) bool {
+	return ethcrypto.VerifySignature(pubKey[:], crypto.Sha256(msg), sig)
 }
