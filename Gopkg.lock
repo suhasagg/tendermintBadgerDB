@@ -3,6 +3,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:b02e5e3f836f077a3249d1dfe3c57d305e007f71a98f2e69c170a2dd8d2b266c"
+  name = "github.com/AndreasBriese/bbloom"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "343706a395b76e5ca5c7dca46a5d937b48febc74"
+
+[[projects]]
+  branch = "master"
   digest = "1:d6afaeed1502aa28e80a4ed0981d570ad91b2579193404256ce672ed0a609e0d"
   name = "github.com/beorn7/perks"
   packages = ["quantile"]
@@ -33,6 +41,29 @@
   pruneopts = "UT"
   revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
   version = "v1.1.1"
+
+[[projects]]
+  digest = "1:5f5090f05382959db941fa45acbeb7f4c5241aa8ac0f8f4393dec696e5953f53"
+  name = "github.com/dgraph-io/badger"
+  packages = [
+    ".",
+    "options",
+    "protos",
+    "skl",
+    "table",
+    "y",
+  ]
+  pruneopts = "UT"
+  revision = "99233d725dbdd26d156c61b2f42ae1671b794656"
+  version = "v1.5.4"
+
+[[projects]]
+  branch = "master"
+  digest = "1:ea678afd6431e09f84a56fc6915ccab9189ddd1379fed997e1433ead9586c50b"
+  name = "github.com/dgryski/go-farm"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "3adb47b1fb0f6d9efcc5051a6c62e2e413ac85a9"
 
 [[projects]]
   digest = "1:b42be5a3601f833e0b9f2d6625d887ec1309764bfcac3d518f3db425dcd4ec5c"
@@ -376,6 +407,90 @@
   version = "v0.14.1"
 
 [[projects]]
+  digest = "1:c0c8fae99d706e484b1fcec8a2366045ef41eb51886e4861917384c0c564a3a0"
+  name = "github.com/tendermint/tendermint"
+  packages = [
+    "abci/client",
+    "abci/example/code",
+    "abci/example/counter",
+    "abci/example/kvstore",
+    "abci/server",
+    "abci/tests/server",
+    "abci/types",
+    "abci/version",
+    "benchmarks/proto",
+    "blockchain",
+    "cmd/tendermint/commands",
+    "config",
+    "consensus",
+    "consensus/types",
+    "crypto",
+    "crypto/ed25519",
+    "crypto/encoding/amino",
+    "crypto/internal/benchmarking",
+    "crypto/merkle",
+    "crypto/multisig",
+    "crypto/multisig/bitarray",
+    "crypto/secp256k1",
+    "crypto/tmhash",
+    "evidence",
+    "libs/autofile",
+    "libs/bech32",
+    "libs/cli",
+    "libs/cli/flags",
+    "libs/clist",
+    "libs/common",
+    "libs/db",
+    "libs/db/remotedb",
+    "libs/db/remotedb/grpcdb",
+    "libs/db/remotedb/proto",
+    "libs/events",
+    "libs/fail",
+    "libs/flowrate",
+    "libs/log",
+    "libs/pubsub",
+    "libs/pubsub/query",
+    "libs/test",
+    "lite",
+    "lite/client",
+    "lite/errors",
+    "lite/proxy",
+    "mempool",
+    "node",
+    "p2p",
+    "p2p/conn",
+    "p2p/dummy",
+    "p2p/pex",
+    "p2p/upnp",
+    "privval",
+    "proxy",
+    "rpc/client",
+    "rpc/client/mock",
+    "rpc/core",
+    "rpc/core/types",
+    "rpc/grpc",
+    "rpc/lib/client",
+    "rpc/lib/server",
+    "rpc/lib/types",
+    "rpc/test",
+    "state",
+    "state/txindex",
+    "state/txindex/kv",
+    "state/txindex/null",
+    "tools/tm-monitor/eventmeter",
+    "tools/tm-monitor/mock",
+    "tools/tm-monitor/monitor",
+    "tools/tm-signer-harness/internal",
+    "types",
+    "types/proto3",
+    "types/time",
+    "version",
+  ]
+  pruneopts = "UT"
+  revision = "28d75ec8016b7fb043735cbe4c4d92ec73355de7"
+  version = "v0.30.0"
+
+[[projects]]
   digest = "1:00d2b3e64cdc3fa69aa250dfbe4cc38c4837d4f37e62279be2ae52107ffbbb44"
   name = "golang.org/x/crypto"
   packages = [
@@ -506,6 +621,7 @@
     "github.com/btcsuite/btcd/btcec",
     "github.com/btcsuite/btcutil/base58",
     "github.com/btcsuite/btcutil/bech32",
+    "github.com/dgraph-io/badger",
     "github.com/ethereum/go-ethereum/crypto/secp256k1",
     "github.com/fortytw2/leaktest",
     "github.com/go-kit/kit/log",
@@ -537,6 +653,81 @@
     "github.com/syndtr/goleveldb/leveldb/iterator",
     "github.com/syndtr/goleveldb/leveldb/opt",
     "github.com/tendermint/go-amino",
+    "github.com/tendermint/tendermint/abci/client",
+    "github.com/tendermint/tendermint/abci/example/code",
+    "github.com/tendermint/tendermint/abci/example/counter",
+    "github.com/tendermint/tendermint/abci/example/kvstore",
+    "github.com/tendermint/tendermint/abci/server",
+    "github.com/tendermint/tendermint/abci/tests/server",
+    "github.com/tendermint/tendermint/abci/types",
+    "github.com/tendermint/tendermint/abci/version",
+    "github.com/tendermint/tendermint/benchmarks/proto",
+    "github.com/tendermint/tendermint/blockchain",
+    "github.com/tendermint/tendermint/cmd/tendermint/commands",
+    "github.com/tendermint/tendermint/config",
+    "github.com/tendermint/tendermint/consensus",
+    "github.com/tendermint/tendermint/consensus/types",
+    "github.com/tendermint/tendermint/crypto",
+    "github.com/tendermint/tendermint/crypto/ed25519",
+    "github.com/tendermint/tendermint/crypto/encoding/amino",
+    "github.com/tendermint/tendermint/crypto/internal/benchmarking",
+    "github.com/tendermint/tendermint/crypto/merkle",
+    "github.com/tendermint/tendermint/crypto/multisig",
+    "github.com/tendermint/tendermint/crypto/multisig/bitarray",
+    "github.com/tendermint/tendermint/crypto/secp256k1",
+    "github.com/tendermint/tendermint/crypto/tmhash",
+    "github.com/tendermint/tendermint/evidence",
+    "github.com/tendermint/tendermint/libs/autofile",
+    "github.com/tendermint/tendermint/libs/bech32",
+    "github.com/tendermint/tendermint/libs/cli",
+    "github.com/tendermint/tendermint/libs/cli/flags",
+    "github.com/tendermint/tendermint/libs/clist",
+    "github.com/tendermint/tendermint/libs/common",
+    "github.com/tendermint/tendermint/libs/db",
+    "github.com/tendermint/tendermint/libs/db/remotedb",
+    "github.com/tendermint/tendermint/libs/db/remotedb/grpcdb",
+    "github.com/tendermint/tendermint/libs/db/remotedb/proto",
+    "github.com/tendermint/tendermint/libs/events",
+    "github.com/tendermint/tendermint/libs/fail",
+    "github.com/tendermint/tendermint/libs/flowrate",
+    "github.com/tendermint/tendermint/libs/log",
+    "github.com/tendermint/tendermint/libs/pubsub",
+    "github.com/tendermint/tendermint/libs/pubsub/query",
+    "github.com/tendermint/tendermint/libs/test",
+    "github.com/tendermint/tendermint/lite",
+    "github.com/tendermint/tendermint/lite/client",
+    "github.com/tendermint/tendermint/lite/errors",
+    "github.com/tendermint/tendermint/lite/proxy",
+    "github.com/tendermint/tendermint/mempool",
+    "github.com/tendermint/tendermint/node",
+    "github.com/tendermint/tendermint/p2p",
+    "github.com/tendermint/tendermint/p2p/conn",
+    "github.com/tendermint/tendermint/p2p/dummy",
+    "github.com/tendermint/tendermint/p2p/pex",
+    "github.com/tendermint/tendermint/p2p/upnp",
+    "github.com/tendermint/tendermint/privval",
+    "github.com/tendermint/tendermint/proxy",
+    "github.com/tendermint/tendermint/rpc/client",
+    "github.com/tendermint/tendermint/rpc/client/mock",
+    "github.com/tendermint/tendermint/rpc/core",
+    "github.com/tendermint/tendermint/rpc/core/types",
+    "github.com/tendermint/tendermint/rpc/grpc",
+    "github.com/tendermint/tendermint/rpc/lib/client",
+    "github.com/tendermint/tendermint/rpc/lib/server",
+    "github.com/tendermint/tendermint/rpc/lib/types",
+    "github.com/tendermint/tendermint/rpc/test",
+    "github.com/tendermint/tendermint/state",
+    "github.com/tendermint/tendermint/state/txindex",
+    "github.com/tendermint/tendermint/state/txindex/kv",
+    "github.com/tendermint/tendermint/state/txindex/null",
+    "github.com/tendermint/tendermint/tools/tm-monitor/eventmeter",
+    "github.com/tendermint/tendermint/tools/tm-monitor/mock",
+    "github.com/tendermint/tendermint/tools/tm-monitor/monitor",
+    "github.com/tendermint/tendermint/tools/tm-signer-harness/internal",
+    "github.com/tendermint/tendermint/types",
+    "github.com/tendermint/tendermint/types/proto3",
+    "github.com/tendermint/tendermint/types/time",
+    "github.com/tendermint/tendermint/version",
     "golang.org/x/crypto/bcrypt",
     "golang.org/x/crypto/chacha20poly1305",
     "golang.org/x/crypto/curve25519",

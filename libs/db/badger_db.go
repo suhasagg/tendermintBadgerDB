@@ -402,11 +402,7 @@ func (itr *badgerDBIterator) Key() []byte {
 
 func (itr *badgerDBIterator) Value() []byte {
 	var value []byte
-	err := itr.source.Item().Value(func(origValue []byte) error {
-		value = make([]byte, len(origValue))
-		copy(value, origValue)
-		return nil
-	})
+	value,err := itr.source.Item().ValueCopy(value)
 	if err != nil {
 		cmn.PanicCrisis(err)
 	}
@@ -419,11 +415,7 @@ func (itr *badgerDBIterator) kv() (key, value []byte) {
 	if bItem == nil {
 		return nil, nil
 	}
-	err := bItem.Value(func(origValue []byte) error {
-		valueobtained = make([]byte, len(origValue))
-		copy(valueobtained, origValue)
-		return nil
-	})
+	valueobtained,err := itr.source.Item().ValueCopy(valueobtained)
 	if err != nil {
 		cmn.PanicCrisis(err)
 	}
